@@ -227,3 +227,5 @@ C:\Users\User\Desktop\Programacion 3\Tarea-9\Tarea-9\obj\Debug\netcoreapp3.1\Tar
 >>>>>>> 757a033339ab5219600ed7223377cb3ac303ada9
 C:\Users\Ramirez Rodriguez\Desktop\Héctor\Itla\Materias\Programación III\Tarea-9\Tarea-9\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\About.razor.g.cs
 C:\Users\Ramirez Rodriguez\Desktop\Héctor\Itla\Materias\Programación III\Tarea-9\Tarea-9\obj\Debug\netcoreapp3.1\Razor\Pages\About.razor.g.cs
+C:\Users\User\Desktop\Programacion 3\Tarea-9\Tarea-9\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\About.razor.g.cs
+C:\Users\User\Desktop\Programacion 3\Tarea-9\Tarea-9\obj\Debug\netcoreapp3.1\Razor\Pages\About.razor.g.cs

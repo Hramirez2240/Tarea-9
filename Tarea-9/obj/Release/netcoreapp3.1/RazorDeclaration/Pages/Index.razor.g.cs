@@ -91,12 +91,12 @@ using Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 43 "C:\Users\User\Desktop\Programacion 3\Tarea-9\Tarea-9\Pages\Index.razor"
+#line 56 "C:\Users\User\Desktop\Programacion 3\Tarea-9\Tarea-9\Pages\Index.razor"
       
     string cedula = "", nombre = "", apellido = "", telefono = "", correo = "",
-        fecha_nacimiento = "", tipo_sangre = "", provincia = "", direccion = "", lat = "", lon = "";
+        fecha_nacimiento = "", tipo_sangre = "", provincia = "", direccion = "", lat = "", lon = "", covid = "";
 
-    int covid, mensaje = 0, mensaje_error = 0, mensaje_vacio = 0;
+    int mensaje = 0, mensaje_error = 0, mensaje_vacio = 0;
     string justificacion = "";
     string correo_verificado;
     bool validar;
@@ -133,11 +133,12 @@ using Models;
                 vacu.Direccion = direccion;
                 vacu.Latitud = lat;
                 vacu.Longitud = lon;
-                //vacu.LeHaDadoCovid = Convert.ToBoolean(covid);
+                vacu.LeHaDadoCovid = covid;
                 vacu.Justifique = justificacion;
 
-                if (vacu.Cedula == "" || vacu.Nombre == "" || vacu.Apellido == "" || vacu.Teléfono == "" || vacu.CorreoElectronico == "")
-                /*vacu.FechaDeNacimiento == "" || vacu.TipoDeSangre == "" || vacu.Provincia == "" || vacu.Direccion == "" || vacu.Latitud == "" || vacu.Longitud == "" || vacu.Justifique == ""*/
+                if (vacu.Cedula == "" || vacu.Nombre == "" || vacu.Apellido == "" || vacu.Teléfono == "" || vacu.CorreoElectronico == "" ||
+                    vacu.FechaDeNacimiento == "" || vacu.TipoDeSangre == "" || vacu.Provincia == "" || vacu.Direccion == "" || vacu.Latitud == "" ||
+                    vacu.Longitud == "" || vacu.LeHaDadoCovid == "" || vacu.Justifique == "")
                 {
                     mensaje = 0;
                     mensaje_error = 0;

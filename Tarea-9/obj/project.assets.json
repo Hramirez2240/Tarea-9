@@ -1077,19 +1077,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ramirez Rodriguez\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ramirez Rodriguez\\Desktop\\Héctor\\Itla\\Materias\\Programación III\\Tarea-9\\Tarea-9\\Tarea-9.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\Programacion 3\\Tarea-9\\Tarea-9\\Tarea-9.csproj",
       "projectName": "Tarea-9",
-      "projectPath": "C:\\Users\\Ramirez Rodriguez\\Desktop\\Héctor\\Itla\\Materias\\Programación III\\Tarea-9\\Tarea-9\\Tarea-9.csproj",
-      "packagesPath": "C:\\Users\\Ramirez Rodriguez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ramirez Rodriguez\\Desktop\\Héctor\\Itla\\Materias\\Programación III\\Tarea-9\\Tarea-9\\obj\\",
+      "projectPath": "C:\\Users\\User\\Desktop\\Programacion 3\\Tarea-9\\Tarea-9\\Tarea-9.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\Programacion 3\\Tarea-9\\Tarea-9\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Ramirez Rodriguez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1158,16 +1158,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\Ramirez Rodriguez\\Desktop\\Héctor\\Itla\\Materias\\Programación III\\Tarea-9\\Tarea-9\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
