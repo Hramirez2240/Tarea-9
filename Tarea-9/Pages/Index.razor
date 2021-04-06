@@ -29,21 +29,21 @@
     <div id="ca">
         @if (mensaje == 1)
         {
-            <div class="alert alert-success mb-2" role="alert">
+            <div class="alert alert-success" role="alert">
                 Gracias por enviar los datos Sr/a. @nombre
             </div>
         }
 
         @if (mensaje_error == 1)
         {
-            <div class="alert alert-danger mb-2" role="alert">
+            <div class="alert alert-danger" role="alert">
                 Ya su solicitud fue registrada, se envió una confirmación al correo: @correo_verificado favor verificar.
             </div>
         }
 
         @if (mensaje_vacio == 1)
         {
-            <div class="alert alert-danger mb-2" role="alert">
+            <div class="alert alert-danger" role="alert">
                 Por favor complete todos los datos.
             </div>
         }
