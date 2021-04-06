@@ -91,7 +91,7 @@ using Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 53 "C:\Users\User\Desktop\Programacion 3\Tarea-9\Tarea-9\Pages\Index.razor"
+#line 56 "C:\Users\User\Desktop\Programacion 3\Tarea-9\Tarea-9\Pages\Index.razor"
       
     string cedula = "", nombre = "", apellido = "", telefono = "", correo = "",
         fecha_nacimiento = "", tipo_sangre = "", provincia = "", direccion = "", lat = "", lon = "", covid = "";
