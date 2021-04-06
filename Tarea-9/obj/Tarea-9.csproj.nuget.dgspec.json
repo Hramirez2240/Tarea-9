@@ -1,37 +1,20 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\2021\\Tarea-9\\Tarea-9\\Tarea-9.csproj": {}
+    "C:\\Users\\Ramirez Rodriguez\\Desktop\\Héctor\\Itla\\Materias\\Programación III\\Tarea-9\\Tarea-9\\Tarea-9.csproj": {}
   },
   "projects": {
-    "C:\\2021\\Tarea-9\\Tarea-9\\Tarea-9.csproj": {
+    "C:\\Users\\Ramirez Rodriguez\\Desktop\\Héctor\\Itla\\Materias\\Programación III\\Tarea-9\\Tarea-9\\Tarea-9.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\2021\\Tarea-9\\Tarea-9\\Tarea-9.csproj",
+        "projectUniqueName": "C:\\Users\\Ramirez Rodriguez\\Desktop\\Héctor\\Itla\\Materias\\Programación III\\Tarea-9\\Tarea-9\\Tarea-9.csproj",
         "projectName": "Tarea-9",
-        "projectPath": "C:\\2021\\Tarea-9\\Tarea-9\\Tarea-9.csproj",
-        "packagesPath": "C:\\Users\\Andriel Castillo\\.nuget\\packages\\",
-        "outputPath": "C:\\2021\\Tarea-9\\Tarea-9\\obj\\",
+        "projectPath": "C:\\Users\\Ramirez Rodriguez\\Desktop\\Héctor\\Itla\\Materias\\Programación III\\Tarea-9\\Tarea-9\\Tarea-9.csproj",
+        "packagesPath": "C:\\Users\\Ramirez Rodriguez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ramirez Rodriguez\\Desktop\\Héctor\\Itla\\Materias\\Programación III\\Tarea-9\\Tarea-9\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Andriel Castillo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-    "C:\\Users\\User\\Desktop\\Programacion 3\\Tarea-9\\Tarea-9\\Tarea-9.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\User\\Desktop\\Programacion 3\\Tarea-9\\Tarea-9\\Tarea-9.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Programacion 3\\Tarea-9\\Tarea-9\\Tarea-9.csproj",
-        "projectName": "Tarea-9",
-        "projectPath": "C:\\Users\\User\\Desktop\\Programacion 3\\Tarea-9\\Tarea-9\\Tarea-9.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Programacion 3\\Tarea-9\\Tarea-9\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 757a033339ab5219600ed7223377cb3ac303ada9
+          "C:\\Users\\Ramirez Rodriguez\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -100,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
