@@ -13,71 +13,85 @@ namespace Tarea_9.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\Ramirez Rodriguez\Desktop\Héctor\Itla\Materias\Programación III\Tarea-9\Tarea-9\_Imports.razor"
+#line 1 "C:\Users\One Piece\Desktop\Tarea-9\Tarea-9\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Ramirez Rodriguez\Desktop\Héctor\Itla\Materias\Programación III\Tarea-9\Tarea-9\_Imports.razor"
+#line 2 "C:\Users\One Piece\Desktop\Tarea-9\Tarea-9\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Ramirez Rodriguez\Desktop\Héctor\Itla\Materias\Programación III\Tarea-9\Tarea-9\_Imports.razor"
+#line 3 "C:\Users\One Piece\Desktop\Tarea-9\Tarea-9\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Ramirez Rodriguez\Desktop\Héctor\Itla\Materias\Programación III\Tarea-9\Tarea-9\_Imports.razor"
+#line 4 "C:\Users\One Piece\Desktop\Tarea-9\Tarea-9\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Ramirez Rodriguez\Desktop\Héctor\Itla\Materias\Programación III\Tarea-9\Tarea-9\_Imports.razor"
+#line 5 "C:\Users\One Piece\Desktop\Tarea-9\Tarea-9\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Ramirez Rodriguez\Desktop\Héctor\Itla\Materias\Programación III\Tarea-9\Tarea-9\_Imports.razor"
+#line 6 "C:\Users\One Piece\Desktop\Tarea-9\Tarea-9\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Ramirez Rodriguez\Desktop\Héctor\Itla\Materias\Programación III\Tarea-9\Tarea-9\_Imports.razor"
+#line 7 "C:\Users\One Piece\Desktop\Tarea-9\Tarea-9\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\Ramirez Rodriguez\Desktop\Héctor\Itla\Materias\Programación III\Tarea-9\Tarea-9\_Imports.razor"
+#line 8 "C:\Users\One Piece\Desktop\Tarea-9\Tarea-9\_Imports.razor"
 using Tarea_9;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\Ramirez Rodriguez\Desktop\Héctor\Itla\Materias\Programación III\Tarea-9\Tarea-9\_Imports.razor"
+#line 9 "C:\Users\One Piece\Desktop\Tarea-9\Tarea-9\_Imports.razor"
 using Tarea_9.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Ramirez Rodriguez\Desktop\Héctor\Itla\Materias\Programación III\Tarea-9\Tarea-9\Pages\Index.razor"
+#line 2 "C:\Users\One Piece\Desktop\Tarea-9\Tarea-9\Pages\Index.razor"
 using Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\One Piece\Desktop\Tarea-9\Tarea-9\Pages\Index.razor"
+using System.Net.Mail;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\One Piece\Desktop\Tarea-9\Tarea-9\Pages\Index.razor"
+using System.Text.RegularExpressions;
 
 #line default
 #line hidden
@@ -91,14 +105,17 @@ using Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 68 "C:\Users\Ramirez Rodriguez\Desktop\Héctor\Itla\Materias\Programación III\Tarea-9\Tarea-9\Pages\Index.razor"
+#line 77 "C:\Users\One Piece\Desktop\Tarea-9\Tarea-9\Pages\Index.razor"
       
+
+    private string Menssage{get;set;} = "";
     string cedula = "", nombre = "", apellido = "", telefono = "", correo = "",
         fecha_nacimiento = "", tipo_sangre = "", provincia = "", direccion = "", lat = "", lon = "", covid = "";
 
     int mensaje = 0, mensaje_error = 0, mensaje_vacio = 0;
     string justificacion = "";
     string correo_verificado;
+    string recibido="Saludos,<br> Muchas gracias por registrarte en la jornardada de Prevencion del Covid-19.";
     bool validar;
 
     public void AgregarVacuna()
@@ -147,29 +164,86 @@ using Models;
 
                 else
                 {
-                    contexto.Add(vacu);
-                    contexto.SaveChanges();
-                    mensaje_error = 0;
-                    mensaje_vacio = 0;
-                    mensaje = 1;
+                    if(IsValidEmail(vacu.Correo)){
+                        contexto.Add(vacu);
+                        contexto.SaveChanges();
+                        mensaje_error = 0;
+                        mensaje_vacio = 0;
+                        mensaje = 1;
 
-                    cedula = "";
-                    apellido = "";
-                    telefono = "";
-                    correo = "";
-                    fecha_nacimiento = "";
-                    tipo_sangre = "";
-                    provincia = "";
-                    direccion = "";
-                    lat = "";
-                    lon = "";
-                    covid = "";
-                    justificacion = "";
+                        SenMail(vacu.Correo,recibido);
+
+
+                    
+
+                       cedula = "";
+                       apellido = "";
+                       telefono = "";
+                       correo = "";
+                       fecha_nacimiento = "";
+                       tipo_sangre = "";
+                       provincia = "";
+                       direccion = "";
+                       lat = "";
+                       lon = "";
+                       covid = "";
+                       justificacion = "";
+                    }else{
+                            mensaje_vacio = 15;
+                    }
+                    
                 }
             }
 
         }
     }
+
+
+    
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 170 "C:\Users\One Piece\Desktop\Tarea-9\Tarea-9\Pages\Index.razor"
+                                                      
+    public static bool IsValidEmail(string strMailAddress)
+        {
+        // Return true if strIn is in valid e-mail format.
+        return Regex.IsMatch(strMailAddress, @"^(?("")("".+?""@)|(([0-9a-zA-Z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-zA-Z])@))" + @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,6}))$");
+    }
+
+    
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 177 "C:\Users\One Piece\Desktop\Tarea-9\Tarea-9\Pages\Index.razor"
+                                  
+    private void SenMail(String enviar1,String mensajeEnviar){
+        try{
+            using(MailMessage mail = new MailMessage()){
+                mail.From = new MailAddress("calkin440040@gmail.com");
+                mail.To.Add(enviar1);
+                mail.Subject = "Registro de Vacuna por Casa.";
+                mail.Body = (mensajeEnviar);
+                mail.IsBodyHtml = true;
+
+                using (SmtpClient smtp = new SmtpClient("smtp.gmail.com",587)){
+                    smtp.Credentials = new System.Net.NetworkCredential("calkin440040@gmail.com","And440040");
+                    smtp.EnableSsl = true;
+                    smtp.Send(mail);
+                    Menssage = "Mail Sent";
+                    
+                }
+            }
+            
+        }catch(Exception ex){
+            Menssage = ex.Message;
+        }
+    }
+
 
 #line default
 #line hidden

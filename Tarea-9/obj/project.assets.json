@@ -1077,20 +1077,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ramirez Rodriguez\\.nuget\\packages\\": {}
+    "C:\\Users\\One Piece\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ramirez Rodriguez\\Desktop\\Héctor\\Itla\\Materias\\Programación III\\Tarea-9\\Tarea-9\\Tarea-9.csproj",
+      "projectUniqueName": "C:\\Users\\One Piece\\Desktop\\Tarea-9\\Tarea-9\\Tarea-9.csproj",
       "projectName": "Tarea-9",
-      "projectPath": "C:\\Users\\Ramirez Rodriguez\\Desktop\\Héctor\\Itla\\Materias\\Programación III\\Tarea-9\\Tarea-9\\Tarea-9.csproj",
-      "packagesPath": "C:\\Users\\Ramirez Rodriguez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ramirez Rodriguez\\Desktop\\Héctor\\Itla\\Materias\\Programación III\\Tarea-9\\Tarea-9\\obj\\",
+      "projectPath": "C:\\Users\\One Piece\\Desktop\\Tarea-9\\Tarea-9\\Tarea-9.csproj",
+      "packagesPath": "C:\\Users\\One Piece\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\One Piece\\Desktop\\Tarea-9\\Tarea-9\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Ramirez Rodriguez\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\One Piece\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -1158,7 +1163,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,5 +1,7 @@
 ﻿@page "/"
 @using Models 
+@using System.Net.Mail;
+@using System.Text.RegularExpressions;
 
 <div>
     <h1 class="text-center">Formulario para ser vacunado en casa</h1>
@@ -61,17 +63,27 @@
                 Por favor complete todos los datos.
             </div>
         }
+
+          @if (mensaje_vacio == 15)
+        {
+            <div class="alert alert-danger" role="alert">
+                Favor de ingresar un correo Valido
+            </div>
+        }
     </div>
 </div>
 <hr>
 
 @code{
+
+    private string Menssage{get;set;} = "";
     string cedula = "", nombre = "", apellido = "", telefono = "", correo = "",
         fecha_nacimiento = "", tipo_sangre = "", provincia = "", direccion = "", lat = "", lon = "", covid = "";
 
     int mensaje = 0, mensaje_error = 0, mensaje_vacio = 0;
     string justificacion = "";
     string correo_verificado;
+    string recibido="Saludos,<br> Muchas gracias por registrarte en la jornardada de Prevencion del Covid-19.";
     bool validar;
 
     public void AgregarVacuna()
@@ -120,27 +132,70 @@
 
                 else
                 {
-                    contexto.Add(vacu);
-                    contexto.SaveChanges();
-                    mensaje_error = 0;
-                    mensaje_vacio = 0;
-                    mensaje = 1;
+                    if(IsValidEmail(vacu.Correo)){
+                        contexto.Add(vacu);
+                        contexto.SaveChanges();
+                        mensaje_error = 0;
+                        mensaje_vacio = 0;
+                        mensaje = 1;
 
-                    cedula = "";
-                    apellido = "";
-                    telefono = "";
-                    correo = "";
-                    fecha_nacimiento = "";
-                    tipo_sangre = "";
-                    provincia = "";
-                    direccion = "";
-                    lat = "";
-                    lon = "";
-                    covid = "";
-                    justificacion = "";
+                        SenMail(vacu.Correo,recibido);
+
+
+                    
+
+                       cedula = "";
+                       apellido = "";
+                       telefono = "";
+                       correo = "";
+                       fecha_nacimiento = "";
+                       tipo_sangre = "";
+                       provincia = "";
+                       direccion = "";
+                       lat = "";
+                       lon = "";
+                       covid = "";
+                       justificacion = "";
+                    }else{
+                            mensaje_vacio = 15;
+                    }
+                    
                 }
             }
 
         }
     }
+
+
+    @*metodo valida si el correo es un correo valido*@
+    public static bool IsValidEmail(string strMailAddress)
+        {
+        // Return true if strIn is in valid e-mail format.
+        return Regex.IsMatch(strMailAddress, @"^(?("")("".+?""@)|(([0-9a-zA-Z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-zA-Z])@))" + @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,6}))$");
+    }
+
+    @*METODO QUE MANDA EL CORREO*@
+    private void SenMail(String enviar1,String mensajeEnviar){
+        try{
+            using(MailMessage mail = new MailMessage()){
+                mail.From = new MailAddress("calkin440040@gmail.com");
+                mail.To.Add(enviar1);
+                mail.Subject = "Registro de Vacuna por Casa.";
+                mail.Body = (mensajeEnviar);
+                mail.IsBodyHtml = true;
+
+                using (SmtpClient smtp = new SmtpClient("smtp.gmail.com",587)){
+                    smtp.Credentials = new System.Net.NetworkCredential("calkin440040@gmail.com","And440040");
+                    smtp.EnableSsl = true;
+                    smtp.Send(mail);
+                    Menssage = "Mail Sent";
+                    
+                }
+            }
+            
+        }catch(Exception ex){
+            Menssage = ex.Message;
+        }
+    }
+
 }
