@@ -18,6 +18,17 @@ a, .btn-link {
     background: #3a0647;
 }
 
+#datos {
+    position: relative;
+    left: -50px;
+    top: -150px;
+}
+
+#img {
+    position: relative;
+    bottom: 80px;
+}
+
 
 .divInformacionPieL {
     margin-bottom: 40px;
@@ -39,7 +50,7 @@ a, .btn-link {
     font-size: 30px !important;
 }
 
-.card-body input {
+.card-body input, .card-body select {
     display: inline !important;
     width: 25vw;
     margin-top: 30px;
@@ -96,15 +107,15 @@ app {
         justify-content: flex-end;
     }
 
-        .main .top-row > a, .main .top-row .btn-link {
-            white-space: nowrap;
-            margin-left: 1.5rem;
-        }
+    .main .top-row > a, .main .top-row .btn-link {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+    }
 
-.main .top-row a:first-child {
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+    .main .top-row a:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
 .sidebar {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
@@ -189,12 +200,12 @@ app {
     z-index: 1000;
 }
 
-#blazor-error-ui .dismiss {
-    cursor: pointer;
-    position: absolute;
-    right: 0.75rem;
-    top: 0.5rem;
-}
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
 
 @media (max-width: 767.98px) {
     .main .top-row:not(.auth) {

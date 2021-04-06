@@ -37,70 +37,81 @@ namespace Tarea_9.Models
                 entity.ToTable("vacunas");
 
                 entity.Property(e => e.Apellido)
+                    .IsRequired()
                     .HasColumnType("varchar(50)")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
                 entity.Property(e => e.Cedula)
-                    .HasColumnType("varchar(50)")
+                    .IsRequired()
+                    .HasColumnType("varchar(100)")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
-                entity.Property(e => e.CorreoElectronico)
-                    .HasColumnName("Correo Electronico")
+                entity.Property(e => e.Correo)
+                    .IsRequired()
+                    .HasColumnType("varchar(100)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
+                entity.Property(e => e.Covid)
+                    .IsRequired()
                     .HasColumnType("varchar(50)")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
                 entity.Property(e => e.Direccion)
-                    .HasColumnType("varchar(50)")
+                    .IsRequired()
+                    .HasColumnType("varchar(100)")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
-                entity.Property(e => e.FechaDeNacimiento)
-                    .HasColumnName("Fecha de Nacimiento")
+                entity.Property(e => e.FechaNacimiento)
+                    .IsRequired()
+                    .HasColumnName("Fecha_nacimiento")
                     .HasColumnType("varchar(50)")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
                 entity.Property(e => e.Justifique)
-                    .HasColumnType("varchar(50)")
+                    .IsRequired()
+                    .HasColumnType("varchar(100)")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
                 entity.Property(e => e.Latitud)
-                    .HasColumnType("varchar(50)")
-                    .HasCharSet("utf8mb4")
-                    .HasCollation("utf8mb4_0900_ai_ci");
-
-                entity.Property(e => e.LeHaDadoCovid)
-                    .HasColumnName("Le ha dado covid")
-                    .HasColumnType("varchar(50)")
+                    .IsRequired()
+                    .HasColumnType("varchar(100)")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
                 entity.Property(e => e.Longitud)
-                    .HasColumnType("varchar(50)")
+                    .IsRequired()
+                    .HasColumnType("varchar(100)")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
                 entity.Property(e => e.Nombre)
+                    .IsRequired()
                     .HasColumnType("varchar(50)")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
                 entity.Property(e => e.Provincia)
+                    .IsRequired()
                     .HasColumnType("varchar(50)")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
-                entity.Property(e => e.Teléfono)
+                entity.Property(e => e.Telefono)
+                    .IsRequired()
                     .HasColumnType("varchar(50)")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
-                entity.Property(e => e.TipoDeSangre)
-                    .HasColumnName("Tipo de Sangre")
+                entity.Property(e => e.TipoSangre)
+                    .IsRequired()
+                    .HasColumnName("Tipo_sangre")
                     .HasColumnType("varchar(50)")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");

@@ -14,13 +14,27 @@
             <input type="text" class="form-control" placeholder="Teléfono" @bind="telefono" />
             <input type="text" class="form-control" placeholder="Correo Electrónico" @bind="correo" />
             <input type="text" class="form-control" placeholder="Fecha de Nacimiento" @bind="fecha_nacimiento" />
-            <input type="text" class="form-control" placeholder="Tipo de Sangre" @bind="tipo_sangre" />
+            <select @bind="tipo_sangre" class="form-control">
+                <option value="" disabled selected hidden>Tipo de sangre</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
             <input type="text" class="form-control" placeholder="Provincia" @bind="provincia" />
             <input type="text" class="form-control" placeholder="Dirección" @bind="direccion" />
             <input type="text" class="form-control" placeholder="Latitud" @bind="lat" />
             <input type="text" class="form-control" placeholder="Longitud" @bind="lon" />
-            <input type="text" class="form-control" placeholder="Le ha dado covid" @bind="covid" />
-            <input type="text" class="form-control" placeholder="Justifiqué" @bind="justificacion" />
+            <select @bind="covid" class="form-control">
+                <option value="" disabled selected hidden>¿Le dio covid?</option>
+                <option value="Si">Si</option>
+                <option value="No">No</option>
+            </select>
+            <input type="text" class="form-control" placeholder="Justifique" @bind="justificacion" />
             <button class="btn btn-primary" @onclick="AgregarVacuna" id="btnejemplo">Enviar datos</button>
         </div>
     </div>
@@ -51,8 +65,6 @@
 </div>
 <hr>
 
-
-
 @code{
     string cedula = "", nombre = "", apellido = "", telefono = "", correo = "",
         fecha_nacimiento = "", tipo_sangre = "", provincia = "", direccion = "", lat = "", lon = "", covid = "";
@@ -74,7 +86,7 @@
                         .Where(e => e.Cedula == cedula)
                         .FirstOrDefault();
 
-                correo_verificado = va.CorreoElectronico;
+                correo_verificado = va.Correo;
                 mensaje = 0;
                 mensaje_vacio = 0;
                 mensaje_error = 1;
@@ -86,20 +98,20 @@
                 vacu.Cedula = cedula;
                 vacu.Nombre = nombre;
                 vacu.Apellido = apellido;
-                vacu.Teléfono = telefono;
-                vacu.CorreoElectronico = correo;
-                vacu.FechaDeNacimiento = fecha_nacimiento;
-                vacu.TipoDeSangre = tipo_sangre;
+                vacu.Telefono = telefono;
+                vacu.Correo = correo;
+                vacu.FechaNacimiento = fecha_nacimiento;
+                vacu.TipoSangre = tipo_sangre;
                 vacu.Provincia = provincia;
                 vacu.Direccion = direccion;
                 vacu.Latitud = lat;
                 vacu.Longitud = lon;
-                vacu.LeHaDadoCovid = covid;
+                vacu.Covid = covid;
                 vacu.Justifique = justificacion;
 
-                if (vacu.Cedula == "" || vacu.Nombre == "" || vacu.Apellido == "" || vacu.Teléfono == "" || vacu.CorreoElectronico == "" ||
-                    vacu.FechaDeNacimiento == "" || vacu.TipoDeSangre == "" || vacu.Provincia == "" || vacu.Direccion == "" || vacu.Latitud == "" ||
-                    vacu.Longitud == "" || vacu.LeHaDadoCovid == "" || vacu.Justifique == "")
+                if (vacu.Cedula == "" || vacu.Nombre == "" || vacu.Apellido == "" || vacu.Telefono == "" || vacu.Correo == "" ||
+                    vacu.FechaNacimiento == "" || vacu.TipoSangre == "" || vacu.Provincia == "" || vacu.Direccion == "" || vacu.Latitud == "" ||
+                    vacu.Longitud == "" || vacu.Covid == "" || vacu.Justifique == "")
                 {
                     mensaje = 0;
                     mensaje_error = 0;
@@ -115,7 +127,6 @@
                     mensaje = 1;
 
                     cedula = "";
-                    nombre = "";
                     apellido = "";
                     telefono = "";
                     correo = "";

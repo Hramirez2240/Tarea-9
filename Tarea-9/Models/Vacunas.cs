@@ -13,15 +13,15 @@ namespace Tarea_9.Models
         public string Cedula { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public string Teléfono { get; set; }
-        public string CorreoElectronico { get; set; }
-        public string FechaDeNacimiento { get; set; }
-        public string TipoDeSangre { get; set; }
+        public string Telefono { get; set; }
+        public string Correo { get; set; }
+        public string FechaNacimiento { get; set; }
+        public string TipoSangre { get; set; }
         public string Provincia { get; set; }
         public string Direccion { get; set; }
         public string Latitud { get; set; }
         public string Longitud { get; set; }
-        public string LeHaDadoCovid { get; set; }
+        public string Covid { get; set; }
         public string Justifique { get; set; }
     }
 }
