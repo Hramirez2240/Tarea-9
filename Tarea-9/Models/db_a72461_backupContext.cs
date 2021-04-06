@@ -59,7 +59,9 @@ namespace Tarea_9.Models
 
                 entity.Property(e => e.FechaDeNacimiento)
                     .HasColumnName("Fecha de Nacimiento")
-                    .HasColumnType("date");
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
 
                 entity.Property(e => e.Justifique)
                     .HasColumnType("varchar(50)")
@@ -71,7 +73,11 @@ namespace Tarea_9.Models
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
-                entity.Property(e => e.LeHaDadoCovid).HasColumnName("Le ha dado covid");
+                entity.Property(e => e.LeHaDadoCovid)
+                    .HasColumnName("Le ha dado covid")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
 
                 entity.Property(e => e.Longitud)
                     .HasColumnType("varchar(50)")
@@ -84,6 +90,11 @@ namespace Tarea_9.Models
                     .HasCollation("utf8mb4_0900_ai_ci");
 
                 entity.Property(e => e.Provincia)
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
+                entity.Property(e => e.Teléfono)
                     .HasColumnType("varchar(50)")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");

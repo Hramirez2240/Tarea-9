@@ -1,7 +1,107 @@
 ﻿@page "/"
+@using Models 
 
-<h1>Hello, world!</h1>
+<div>
+    <h1 class="text-center">Formulario para ser vacunado en casa</h1>
+    <hr />
+    <br /><br />
 
-Welcome to your new app.
+    <div class="card" style="width: 55rem;">
+        <div class="card-body">
+            <h5 class="card-title" style="text-align: center;">Datos Requeridos</h5>
+            <input type="text" class="form-control" placeholder="Digite una cedula" @bind="cedula" />
+            <input type="text" class="form-control" placeholder="Digite su nombre" @bind="nombre" />
+            <input type="text" class="form-control" placeholder="Digite su apellido" @bind="apellido" />
+            <input type="text" class="form-control" placeholder="Digite su telefono" @bind="telefono" />
+            <input type="text" class="form-control" placeholder="Digite su correo" @bind="correo" />
+            <button class="btn btn-primary" @onclick="AgregarVacuna" id="btnejemplo">Enviar datos</button>
+        </div>
+    </div>
+    <br /><br />
+    @if (mensaje == 1)
+    {
+        <div class="alert alert-success" role="alert">
+            Gracias por enviar los datos Sr/a. @nombre
+        </div>
+    }
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    @if (mensaje_error == 1)
+    {
+        <div class="alert alert-danger" role="alert">
+            Ya su solicitud fue registrada, se envió una confirmación al correo: @correo_verificado favor verificar
+        </div>
+    }
+
+    @if (mensaje_vacio == 1)
+    {
+        <div class="alert alert-danger" role="alert">
+            Por favor complete todos los datos
+        </div>
+    }
+</div>
+
+@code{
+    string cedula = "", nombre = "", apellido = "", telefono = "", correo = "",
+        fecha_nacimiento = "", tipo_sangre = "", provincia = "", direccion = "", lat = "", lon = "";
+
+    int covid, mensaje = 0, mensaje_error = 0, mensaje_vacio = 0;
+    string justificacion = "";
+    string correo_verificado;
+    bool validar;
+
+    public void AgregarVacuna()
+    {
+        using (db_a72461_backupContext contexto = new db_a72461_backupContext())
+        {
+            validar = contexto.Vacunas.Any(ee => ee.Cedula == cedula);
+
+            if (validar)
+            {
+                Vacunas va = contexto.Vacunas
+                        .Where(e => e.Cedula == cedula)
+                        .FirstOrDefault();
+
+                correo_verificado = va.CorreoElectronico;
+                mensaje = 0;
+                mensaje_vacio = 0;
+                mensaje_error = 1;
+            }
+
+            else
+            {
+                Vacunas vacu = new Vacunas();
+                vacu.Cedula = cedula;
+                vacu.Nombre = nombre;
+                vacu.Apellido = apellido;
+                vacu.Teléfono = telefono;
+                vacu.CorreoElectronico = correo;
+                vacu.FechaDeNacimiento = fecha_nacimiento;
+                vacu.TipoDeSangre = tipo_sangre;
+                vacu.Provincia = provincia;
+                vacu.Direccion = direccion;
+                vacu.Latitud = lat;
+                vacu.Longitud = lon;
+                //vacu.LeHaDadoCovid = Convert.ToBoolean(covid);
+                vacu.Justifique = justificacion;
+
+                if (vacu.Cedula == "" || vacu.Nombre == "" || vacu.Apellido == "" || vacu.Teléfono == "" || vacu.CorreoElectronico == "")
+                /*vacu.FechaDeNacimiento == "" || vacu.TipoDeSangre == "" || vacu.Provincia == "" || vacu.Direccion == "" || vacu.Latitud == "" || vacu.Longitud == "" || vacu.Justifique == ""*/
+                {
+                    mensaje = 0;
+                    mensaje_error = 0;
+                    mensaje_vacio = 1;
+                }
+
+                else
+                {
+                    contexto.Add(vacu);
+                    contexto.SaveChanges();
+                    mensaje_error = 0;
+                    mensaje_vacio = 0;
+                    mensaje = 1;
+                }
+            }
+
+        }
+    }
+}

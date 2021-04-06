@@ -8,6 +8,32 @@ a, .btn-link {
     color: #0366d6;
 }
 
+.card {
+    position: relative;
+    left: 50px;
+    border: 2px solid black !important;
+}
+
+.card-title {
+    margin-bottom: 25px !important;
+    font-size: 30px !important;
+}
+
+.card-body input {
+    display: inline !important;
+    width: 25vw;
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+#btnejemplo {
+    margin: 25px;
+    position: relative;
+    left: 250px;
+    width: 300px;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #1b6ec2;
