@@ -4,40 +4,50 @@
 <div>
     <h1 class="text-center">Formulario para ser vacunado en casa</h1>
     <hr />
-    <br /><br />
-
+    <br />
     <div class="card" style="width: 55rem;">
         <div class="card-body">
             <h5 class="card-title" style="text-align: center;">Datos Requeridos</h5>
-            <input type="text" class="form-control" placeholder="Digite una cedula" @bind="cedula" />
-            <input type="text" class="form-control" placeholder="Digite su nombre" @bind="nombre" />
-            <input type="text" class="form-control" placeholder="Digite su apellido" @bind="apellido" />
-            <input type="text" class="form-control" placeholder="Digite su telefono" @bind="telefono" />
-            <input type="text" class="form-control" placeholder="Digite su correo" @bind="correo" />
+            <input type="text" class="form-control" placeholder="Cedula" @bind="cedula" />
+            <input type="text" class="form-control" placeholder="Nombre" @bind="nombre" />
+            <input type="text" class="form-control" placeholder="Apellido" @bind="apellido" />
+            <input type="text" class="form-control" placeholder="Teléfono" @bind="telefono" />
+            <input type="text" class="form-control" placeholder="Correo Electrónico" @bind="correo" />
+            <input type="text" class="form-control" placeholder="Fecha de Nacimiento" @bind="fecha_nacimiento" />
+            <input type="text" class="form-control" placeholder="Tipo de Sangre" @bind="tipo_sangre" />
+            <input type="text" class="form-control" placeholder="Provincia" @bind="provincia" />
+            <input type="text" class="form-control" placeholder="Dirección" @bind="direccion" />
+            <input type="text" class="form-control" placeholder="Latitud" @bind="lat" />
+            <input type="text" class="form-control" placeholder="Longitud" @bind="lon" />
+            <input type="text" class="form-control" placeholder="Le ha dado covid" @bind="covid" />
+            <input type="text" class="form-control" placeholder="Justifiqué" @bind="justificacion" />
             <button class="btn btn-primary" @onclick="AgregarVacuna" id="btnejemplo">Enviar datos</button>
         </div>
     </div>
     <br /><br />
-    @if (mensaje == 1)
-    {
-        <div class="alert alert-success" role="alert">
-            Gracias por enviar los datos Sr/a. @nombre
-        </div>
-    }
 
-    @if (mensaje_error == 1)
-    {
-        <div class="alert alert-danger" role="alert">
-            Ya su solicitud fue registrada, se envió una confirmación al correo: @correo_verificado favor verificar
-        </div>
-    }
+    <div id="ca">
+        @if (mensaje == 1)
+        {
+            <div class="alert alert-success mb-2" role="alert">
+                Gracias por enviar los datos Sr/a. @nombre
+            </div>
+        }
 
-    @if (mensaje_vacio == 1)
-    {
-        <div class="alert alert-danger" role="alert">
-            Por favor complete todos los datos
-        </div>
-    }
+        @if (mensaje_error == 1)
+        {
+            <div class="alert alert-danger mb-2" role="alert">
+                Ya su solicitud fue registrada, se envió una confirmación al correo: @correo_verificado favor verificar.
+            </div>
+        }
+
+        @if (mensaje_vacio == 1)
+        {
+            <div class="alert alert-danger mb-2" role="alert">
+                Por favor complete todos los datos.
+            </div>
+        }
+    </div>
 </div>
 <hr>
 
@@ -45,9 +55,9 @@
 
 @code{
     string cedula = "", nombre = "", apellido = "", telefono = "", correo = "",
-        fecha_nacimiento = "", tipo_sangre = "", provincia = "", direccion = "", lat = "", lon = "";
+        fecha_nacimiento = "", tipo_sangre = "", provincia = "", direccion = "", lat = "", lon = "", covid = "";
 
-    int covid, mensaje = 0, mensaje_error = 0, mensaje_vacio = 0;
+    int mensaje = 0, mensaje_error = 0, mensaje_vacio = 0;
     string justificacion = "";
     string correo_verificado;
     bool validar;
@@ -84,11 +94,12 @@
                 vacu.Direccion = direccion;
                 vacu.Latitud = lat;
                 vacu.Longitud = lon;
-                //vacu.LeHaDadoCovid = Convert.ToBoolean(covid);
+                vacu.LeHaDadoCovid = covid;
                 vacu.Justifique = justificacion;
 
-                if (vacu.Cedula == "" || vacu.Nombre == "" || vacu.Apellido == "" || vacu.Teléfono == "" || vacu.CorreoElectronico == "")
-                /*vacu.FechaDeNacimiento == "" || vacu.TipoDeSangre == "" || vacu.Provincia == "" || vacu.Direccion == "" || vacu.Latitud == "" || vacu.Longitud == "" || vacu.Justifique == ""*/
+                if (vacu.Cedula == "" || vacu.Nombre == "" || vacu.Apellido == "" || vacu.Teléfono == "" || vacu.CorreoElectronico == "" ||
+                    vacu.FechaDeNacimiento == "" || vacu.TipoDeSangre == "" || vacu.Provincia == "" || vacu.Direccion == "" || vacu.Latitud == "" ||
+                    vacu.Longitud == "" || vacu.LeHaDadoCovid == "" || vacu.Justifique == "")
                 {
                     mensaje = 0;
                     mensaje_error = 0;

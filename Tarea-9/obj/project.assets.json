@@ -1077,11 +1077,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Andriel Castillo\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\User\\.nuget\\packages\\": {}
+>>>>>>> 757a033339ab5219600ed7223377cb3ac303ada9
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\2021\\Tarea-9\\Tarea-9\\Tarea-9.csproj",
       "projectName": "Tarea-9",
       "projectPath": "C:\\2021\\Tarea-9\\Tarea-9\\Tarea-9.csproj",
@@ -1090,6 +1095,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Andriel Castillo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\Programacion 3\\Tarea-9\\Tarea-9\\Tarea-9.csproj",
+      "projectName": "Tarea-9",
+      "projectPath": "C:\\Users\\User\\Desktop\\Programacion 3\\Tarea-9\\Tarea-9\\Tarea-9.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\Programacion 3\\Tarea-9\\Tarea-9\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 757a033339ab5219600ed7223377cb3ac303ada9
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1158,7 +1173,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
